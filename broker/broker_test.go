@@ -6,7 +6,7 @@ import (
 )
 
 func TestBroker(t *testing.T) {
-	b, err := NewBroker(10)
+	b, err := New(10)
 	errIsNil(t, err)
 
 	errIsNil(t, b.Put("pet", "cat"))

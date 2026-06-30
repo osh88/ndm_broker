@@ -5,7 +5,7 @@ package queue
 import "testing"
 
 func TestQueue(t *testing.T) {
-	q, err := NewQueue[string](3)
+	q, err := New[string](3)
 	if err != nil {
 		t.Error(err)
 	}

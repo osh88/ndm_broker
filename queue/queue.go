@@ -5,9 +5,9 @@ import (
 	"sync"
 )
 
-func NewQueue[T any](initCapacity int) (*Queue[T], error) {
+func New[T any](initCapacity int) (*Queue[T], error) {
 	if initCapacity <= 0 {
-		return nil, errors.New("initCapacity <= 0")
+		return nil, errors.New("queue.New(): initCapacity <= 0")
 	}
 
 	return &Queue[T]{

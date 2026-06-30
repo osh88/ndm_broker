@@ -62,12 +62,12 @@ func (o *Broker) getQueue(queueName string) (*Queue, error) {
 		return q, nil
 	}
 
-	q, err := queue.NewQueue[string](o.initQueueCapacity)
+	q, err := queue.New[string](o.initQueueCapacity)
 	if err != nil {
 		return nil, fmt.Errorf("Broker.getQueue(): can't create msgs queue: %w", err)
 	}
 
-	s, err := queue.NewQueue[chan string](o.initQueueCapacity)
+	s, err := queue.New[chan string](o.initQueueCapacity)
 	if err != nil {
 		return nil, fmt.Errorf("Broker.getQueue(): can't create subs queue: %w", err)
 	}
